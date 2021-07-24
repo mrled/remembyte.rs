@@ -8,7 +8,11 @@ Version 2!
 
 A command to map raw bytes to something easier to remember, like words or emoji.
 
-It's very basic right now.
+For instance, in the default `emoji` mapping, a short array of three bytes `[0x1, 0x2, 0x3]` would map to `🌀: 🌂: 🌅`.
+
+Right now it can map to emoji, and the [PGP word list](https://en.wikipedia.org/wiki/PGP_word_list).
+
+It's very basic right now. Currently it can show a mapping of the fingerprint of an SSH public key from local disk. Eventually it will be able to connect to remote SSH servers and show a mapping of the host key fingerprint, show a mapping of the fingerprint of a local or remote TLS server (like HTTPS), and accept hex input.
 
 ## How do you use it?
 
