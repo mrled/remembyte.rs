@@ -1,6 +1,15 @@
+use std::vec::Vec;
+
+pub type Bytemap<'a> = [&'a str; 256];
+
+pub struct ComposedBytemap<'a> {
+    pub maps: Vec<Bytemap<'a>>,
+    pub separator: &'a str,
+}
+
 // Originally taken from
 // <http://www.windytan.com/2014/10/visualizing-hex-bytes-with-unicode-emoji.html>
-pub const WINDYTAN_EMOJI_MAP: [&str; 256] = [
+pub const WINDYTAN_EMOJI_MAP: Bytemap = [
     "🌀", "🌂", "🌅", "🌈", "🌙", "🌞", "🌟", "🌠", "🌰", "🌱", "🌲", "🌳", "🌴", "🌵", "🌷", "🌸",
     "🌹", "🌺", "🌻", "🌼", "🌽", "🌾", "🌿", "🍀", "🍁", "🍂", "🍃", "🍄", "🍅", "🍆", "🍇", "🍈",
     "🍉", "🍊", "🍋", "🍌", "🍍", "🍎", "🍏", "🍐", "🍑", "🍒", "🍓", "🍔", "🍕", "🍖", "🍗", "🍘",
@@ -19,7 +28,7 @@ pub const WINDYTAN_EMOJI_MAP: [&str; 256] = [
     "👩", "👪", "👮", "👯", "👺", "👻", "👼", "👽", "👾", "👿", "💀", "💁", "💂", "💃", "💄", "💅",
 ];
 
-const PGP_WORDLIST_TWO_MAP: [&str; 256] = [
+pub const PGP_WORDLIST_TWO_MAP: Bytemap = [
     "aardvark",
     "absurd",
     "accrue",
@@ -278,7 +287,7 @@ const PGP_WORDLIST_TWO_MAP: [&str; 256] = [
     "Zulu",
 ];
 
-const PGP_WORDLIST_THREE_MAP: [&str; 256] = [
+pub const PGP_WORDLIST_THREE_MAP: Bytemap = [
     "adroitness",
     "adviser",
     "aggregate",
